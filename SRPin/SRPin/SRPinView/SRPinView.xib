@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SRPinView" customModule="SRPin" customModuleProvider="target">
+            <connections>
+                <outlet property="pinFootView" destination="LA9-Kz-Mjj" id="O5n-hJ-y1G"/>
+                <outlet property="pinHeadInnerView" destination="ssn-QX-YJx" id="XGW-rg-kOK"/>
+                <outlet property="pinHeadView" destination="WS5-ww-aHX" id="5ka-Me-yj3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="203" height="509"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WS5-ww-aHX">
+                    <rect key="frame" x="0.0" y="0.0" width="203" height="203"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-QX-YJx">
+                            <rect key="frame" x="61" y="61" width="81" height="81"/>
+                            <color key="backgroundColor" red="0.061083225390000002" green="0.05881775702" blue="0.04719694461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ssn-QX-YJx" secondAttribute="height" id="GnG-5n-mXD"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.034843265075344076" green="0.555342073572205" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="ssn-QX-YJx" firstAttribute="centerY" secondItem="WS5-ww-aHX" secondAttribute="centerY" id="2CW-os-2q7"/>
+                        <constraint firstItem="ssn-QX-YJx" firstAttribute="width" secondItem="WS5-ww-aHX" secondAttribute="width" multiplier="0.4" id="QgU-x6-sdK"/>
+                        <constraint firstAttribute="width" secondItem="WS5-ww-aHX" secondAttribute="height" id="jlg-Up-1Hk"/>
+                        <constraint firstItem="ssn-QX-YJx" firstAttribute="centerX" secondItem="WS5-ww-aHX" secondAttribute="centerX" id="m7P-zR-ELU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Kz-Mjj">
+                    <rect key="frame" x="101" y="203" width="1.5" height="303"/>
+                    <color key="backgroundColor" red="0.034843265079999998" green="0.55534207359999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1.5" id="36o-2W-uCw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WS5-ww-aHX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="5Kf-dK-gkX"/>
+                <constraint firstItem="LA9-Kz-Mjj" firstAttribute="top" secondItem="WS5-ww-aHX" secondAttribute="bottom" id="Rl2-N6-Juw"/>
+                <constraint firstAttribute="bottom" secondItem="LA9-Kz-Mjj" secondAttribute="bottom" constant="3" id="dxy-0O-fke"/>
+                <constraint firstItem="WS5-ww-aHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eiM-PG-mS6"/>
+                <constraint firstItem="LA9-Kz-Mjj" firstAttribute="centerX" secondItem="WS5-ww-aHX" secondAttribute="centerX" id="kf8-sW-R0L"/>
+                <constraint firstItem="WS5-ww-aHX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yr9-3c-Oie"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="152.80000000000001" y="449.32533733133437"/>
+        </view>
+    </objects>
+</document>

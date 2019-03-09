@@ -19,6 +19,22 @@ class SRPinView: UIView {
     private var _rhythmSmall:UIBezierPath?
     private var _rhythmLarge:UIBezierPath?
     
+//    var h:CGRect?,f:CGRect?
+//    var hFrame:CGRect{
+//        if h == nil{
+//            h = pinHeadView.frame
+//        }
+//
+//        return h!
+//    }
+//    var fFrame:CGRect!{
+//        if f == nil{
+//            f = pinFootView.frame
+//        }
+//
+//        return f!
+//    }
+    
     private var rhythmSmall:UIBezierPath{
         get{
             if _rhythmSmall == nil {
@@ -123,46 +139,70 @@ class SRPinView: UIView {
         sharpLayer.add(animation2, forKey: "Rhythm.opacity")
     }
     
-//    func pinFootPointIn(view v:UIView) -> CGPoint {
-//
-//    }
+    var hFrame:CGRect!,fFrame:CGRect!
+    var isAnimating:Bool = false
+    func restore() -> Void {
+        pinHeadView.frame = hFrame
+        pinFootView.frame = fFrame
+    }
     
     func jump(rhythmNeed:Bool) -> Void {
-        let hFrame = pinHeadView.frame, fFrame = pinFootView.frame
-        let offsetHeight1 = fFrame.height * 0.7
-        let offsetHeight2 = fFrame.height * 0.1
+        if isAnimating {
+            pinHeadView.layer.removeAllAnimations()
+            pinFootView.layer.removeAllAnimations()
+            restore()
+            isAnimating = false
+        }
+        
+        isAnimating = true
+        
+        hFrame = pinHeadView.frame
+        fFrame = pinFootView.frame
+        
+        let additional:CGFloat = 0.85
+        let offsetHeight1 = fFrame.height * additional
+        let offsetHeight2 = fFrame.height * 0.15
         
         let hFrame1 = CGRect.init(origin: CGPoint.init(x: hFrame.origin.x, y: hFrame.origin.y - offsetHeight1), size: hFrame.size)
         let fFrame1 = CGRect.init(x: fFrame.origin.x, y: fFrame.origin.y - offsetHeight1, width: fFrame.width, height: fFrame.height + offsetHeight1)
         
         let hFrame2 = CGRect.init(origin: CGPoint.init(x: hFrame.origin.x, y: hFrame.origin.y - offsetHeight2), size: hFrame.size)
-        let fFrame2 = CGRect.init(x: fFrame.origin.x, y: fFrame.origin.y - offsetHeight2, width: fFrame.width, height: fFrame.height * 0.2)
+        let fFrame2 = CGRect.init(x: fFrame.origin.x, y: fFrame.origin.y - offsetHeight2, width: fFrame.width, height: fFrame.height * (1 - additional))
         
-        let hFrame3 = CGRect.init(origin: CGPoint.init(x: hFrame.origin.x, y: hFrame.origin.y + fFrame.height * 0.7), size: hFrame.size)
-        let fFrame3 = CGRect.init(x: fFrame.origin.x, y: fFrame.origin.y + 0.7 * fFrame.height, width: fFrame.width, height: fFrame.height * 0.3)
+        let hFrame3 = CGRect.init(origin: CGPoint.init(x: hFrame.origin.x, y: hFrame.origin.y + offsetHeight1), size: hFrame.size)
+        let fFrame3 = CGRect.init(x: fFrame.origin.x, y: fFrame.origin.y + offsetHeight1, width: fFrame.width, height: fFrame.height * (1 - additional))
         
         UIView.animate(withDuration: 0.1,  delay: 0, options: .curveEaseOut, animations: {
             self.pinHeadView.frame = hFrame1
             self.pinFootView.frame = fFrame1
         }) { (complete) in
-            UIView.animate(withDuration: 0.1,  delay: 0, options: .curveLinear, animations: {
-                self.pinHeadView.frame = hFrame2
-                self.pinFootView.frame = fFrame2
-            }, completion: { (complete) in
-                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
-                    self.pinHeadView.frame = hFrame3
-                    self.pinFootView.frame = fFrame3
-                }, completion: {(complete) in
-                    UIView.animate(withDuration: 0.12, delay: 0,options: .curveEaseOut, animations: {
-                        self.pinHeadView.frame = hFrame
-                        self.pinFootView.frame = fFrame
-                    }, completion:{(complete) in
-                        if rhythmNeed {
-                            self.rhythm()
-                        }
-                    })
+            if complete {
+                UIView.animate(withDuration: 0.1,  delay: 0, options: .curveLinear, animations: {
+                    self.pinHeadView.frame = hFrame2
+                    self.pinFootView.frame = fFrame2
+                }, completion: { (complete) in
+                    if complete {
+                        UIView.animate(withDuration: 0.1, delay: 0.02, options: .curveEaseOut, animations: {
+                            self.pinHeadView.frame = hFrame3
+                            self.pinFootView.frame = fFrame3
+                        }, completion: {(complete) in
+                            if complete {
+                                UIView.animate(withDuration: 0.12, delay: 0,options: .curveEaseOut, animations: {
+                                    self.pinHeadView.frame = self.hFrame
+                                    self.pinFootView.frame = self.fFrame
+                                }, completion:{(complete) in
+                                    if complete {
+                                        self.isAnimating = false
+                                        if rhythmNeed {
+                                            self.rhythm()
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                    }
                 })
-            })
+            }
         }
     }
 }

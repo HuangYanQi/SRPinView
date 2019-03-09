@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // rhythm 参数 ，true 表示跳动完成后，底部圆圈放大的律动效果
+        //              false 完成后不做动画
         self.pinView.jump(rhythmNeed: true)
     }
 

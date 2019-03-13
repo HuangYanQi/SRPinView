@@ -146,7 +146,7 @@ public class SRPinView: UIView {
         pinFootView.frame = fFrame
     }
     
-    public func jump(rhythmNeed:Bool) -> Void {
+    @objc public func jump(rhythmNeed:Bool) -> Void {
         if isAnimating {
             pinHeadView.layer.removeAllAnimations()
             pinFootView.layer.removeAllAnimations()

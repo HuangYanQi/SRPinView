@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SRPinView: UIView {
+public class SRPinView: UIView {
     
     private var sharpLayer:CAShapeLayer!
     

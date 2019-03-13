@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SRPinView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "打车软件大头针视图"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "SRPin/SRPin/SRPinView/{*.swift,*.xib}"
+  spec.source_files  = "SRPin/SRPin/SRPinView/{*.swift}"
+  spec.resource      = "SRPin/SRPin/SRPinView/*.xib"
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -92,7 +93,6 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
 
    spec.framework    = "UIKit","Foundation"
 

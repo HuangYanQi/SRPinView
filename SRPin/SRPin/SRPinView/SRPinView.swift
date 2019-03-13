@@ -91,7 +91,7 @@ public class SRPinView: UIView {
         layer.addSublayer(sharpLayer)
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         let contextRef = UIGraphicsGetCurrentContext()
         let ringW:CGFloat = 3.6,ringH:CGFloat = 1.2
         let ringRect = CGRect.init(origin: CGPoint.init(x: rect.width / 2.0 - ringW/2.0, y: self.pinFootView.frame.maxY - ringH/2.0), size: CGSize(width: ringW, height: ringH))
@@ -139,14 +139,14 @@ public class SRPinView: UIView {
         sharpLayer.add(animation2, forKey: "Rhythm.opacity")
     }
     
-    var hFrame:CGRect!,fFrame:CGRect!
-    var isAnimating:Bool = false
-    func restore() -> Void {
+    private var hFrame:CGRect!,fFrame:CGRect!
+    private var isAnimating:Bool = false
+    private func restore() -> Void {
         pinHeadView.frame = hFrame
         pinFootView.frame = fFrame
     }
     
-    func jump(rhythmNeed:Bool) -> Void {
+    public func jump(rhythmNeed:Bool) -> Void {
         if isAnimating {
             pinHeadView.layer.removeAllAnimations()
             pinFootView.layer.removeAllAnimations()

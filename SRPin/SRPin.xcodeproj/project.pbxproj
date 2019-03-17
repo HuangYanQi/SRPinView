@@ -16,7 +16,7 @@
 		0A40CBB222311C2E00A2E35B /* SRPinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40CBB122311C2E00A2E35B /* SRPinUITests.swift */; };
 		0A40CBC122311C9800A2E35B /* SRPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40CBC022311C9800A2E35B /* SRPinView.swift */; };
 		0A40CBC322311CA500A2E35B /* SRPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A40CBC222311CA500A2E35B /* SRPinView.xib */; };
-		0A7E1A19223DE3B4005946C3 /* SRAirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E1A18223DE3B4005946C3 /* SRAirView.swift */; };
+		0A7E1A19223DE3B4005946C3 /* SRAirViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E1A18223DE3B4005946C3 /* SRAirViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		0A40CBB322311C2E00A2E35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A40CBC022311C9800A2E35B /* SRPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPinView.swift; sourceTree = "<group>"; };
 		0A40CBC222311CA500A2E35B /* SRPinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SRPinView.xib; sourceTree = "<group>"; };
-		0A7E1A18223DE3B4005946C3 /* SRAirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRAirView.swift; sourceTree = "<group>"; };
+		0A7E1A18223DE3B4005946C3 /* SRAirViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRAirViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 		0A7E1A17223DE39F005946C3 /* SRAirView */ = {
 			isa = PBXGroup;
 			children = (
-				0A7E1A18223DE3B4005946C3 /* SRAirView.swift */,
+				0A7E1A18223DE3B4005946C3 /* SRAirViews.swift */,
 			);
 			path = SRAirView;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			files = (
 				0A40CBC122311C9800A2E35B /* SRPinView.swift in Sources */,
 				0A40CB9422311C2D00A2E35B /* ViewController.swift in Sources */,
-				0A7E1A19223DE3B4005946C3 /* SRAirView.swift in Sources */,
+				0A7E1A19223DE3B4005946C3 /* SRAirViews.swift in Sources */,
 				0A40CB9222311C2D00A2E35B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

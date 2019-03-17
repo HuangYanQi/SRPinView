@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SRPinView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "打车软件大头针视图"
 
   # This description is used to generate tags and improve search results.

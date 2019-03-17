@@ -8,12 +8,16 @@
 
 import UIKit
 
-open class SRAirView: UIView {
-
-    public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+open class SRAirContentView: UIView {
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         return view == self ? nil : view
     }
 }
 
-open class SRAirScrollView:UIScrollView
+open class SRAirScrollView:UIScrollView{
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        return view == self ? nil : view
+    }
+}
